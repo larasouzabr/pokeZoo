@@ -8,29 +8,26 @@ import { getPokemonsService } from '../services/getPokemons.service';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
- public pokemons = [];
+
+    public pokemons = [];
     
-   constructor(
-    public pokemonService:getPokemonsService,
-   ) {
-   }
+    constructor(
+      public pokemonService:getPokemonsService,
+    ) {}
 
   ngOnInit(): void {
-   this.pokemonService.getPokemonName2().subscribe(resp => {
-    this.pokemons = resp.results;
-    console.log(this.pokemons)
-    this.pokemons.map((p:any) => {
-      this.pokemonService.getPokemonDetails(p.name).subscribe(pd => {
-        p = ({
-          ...p,
-          ...pd
+    this.pokemonService.getPokemonName2().subscribe(async resp => {
+      resp.results = await resp.results.map(async (pokemon:any) => {
+        let pokeDetails = await this.pokemonService.getPokemonDetails(pokemon.name).toPromise();
+        return ({
+          ...pokemon,
+          ...pokeDetails
         });
-      })
-      return p;
-    })
-   })
-
+      });
+      Promise.all(resp.results).then((results:any) => {
+        this.pokemons = results;
+      });
+    });
   }
-
 
 }
