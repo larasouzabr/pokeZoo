@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, Input, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/dtos';
+
 
 @Component({
   selector: 'app-poke-names',
@@ -18,5 +19,6 @@ export class PokeNamesComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.pokemon)
   }
+
 
 }

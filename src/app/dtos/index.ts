@@ -4,5 +4,6 @@ export interface Pokemon{
     abilities?: string,
     forms?: string,
     stats?: string,
-    types?: string
+    types?: string,
+    image?:string
 }
