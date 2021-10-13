@@ -20,5 +20,7 @@ export class PokeNamesComponent implements OnInit {
     console.log(this.pokemon)
   }
 
-
+  pegarImagemPokemon() {
+  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.pokemon.id}.png`;
+  }
 }

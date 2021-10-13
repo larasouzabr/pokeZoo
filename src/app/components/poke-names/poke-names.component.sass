@@ -7,11 +7,16 @@
     font-family: 'Pokemon Solid', sans-serif
  
 
+#img
+  width: 200px
+  height: 200px
 
 .pokemon-card
   
   &__image
     background: #F2F2F2
+    width: 250px
+    margin: 0
 
   &__number,
   &__name
@@ -29,15 +34,16 @@
     text-transform: capitalize
 
   &__abilities
-    border-radius: 5px
+    border-radius: 3px
     border: 1px solid black
     font-size: 16px
-    line-height: 18px 
-    margin-bottom: 10px
+    line-height: 30px 
     max-width: 100px
-    text-align: center
     text-transform: capitalize
-    width: auto
+    width:40%
+    display: inline-flex
+    margin: 3px
+    padding: 2px
 
 
   &__types
@@ -47,10 +53,8 @@
     margin-top: 20px 
     border-radius: 3px
     font-size: 16px
-    line-height: 18px
     margin: 0 10px
     max-width: 200px
-    text-align: center
     text-transform: capitalize
     width: 50%
 

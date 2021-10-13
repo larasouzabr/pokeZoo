@@ -2,17 +2,16 @@
 
 <div class="container-fluid">
   <div class="row m-3">      
-    <div class="d-flex flex-wrap justify-content-center align-itens-center">
-      <div class="card text-justify shadow p-4 mb-5 bg-white rounded" style="width: 18rem;">
-
-        <div class="pokemon-card">
+    <div class="d-flex flex-wrap justify-content-center">
+      <div class="card text-justify  shadow p-4 mb-5 bg-white rounded" style="width: 18rem;">
+        <div class="pokemon-card text-center">
           <div class="pokemon-card__number">
             {{ 'Nº ' + pokemon?.id}} 
           </div>
-          <div class="pokemon-card__img">
-            <!--   <img
-              [src]="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon?.id}}.png"
-              alt="Pokemon Image"> -->
+          <div class="pokemon-card__image">
+               <img
+              [src]="pegarImagemPokemon()"
+              alt="Pokemon Image" id="img"> 
           </div>   
           <div class="pokemon-card__name">
             {{pokemon?.name}} 
@@ -23,7 +22,7 @@
               {{ ability?.ability?.name }}
             </div>
           </div>
-        
+          <p> <label id="title">Type </label></p>
           <div class="pokemon-card__types">
             <div class="pokemon-card__type"
                  *ngFor="let type of pokemon?.types"
