@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,8 +20,6 @@ import { ItemsComponent } from './items/items.component';
 import { ItemsCardComponent } from './components/items-card/items-card.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { PokeDetailsComponent } from './details/pokemon-details/poke-details/poke-details.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +30,6 @@ import { PokeDetailsComponent } from './details/pokemon-details/poke-details/pok
     BerriesCardComponent,
     ItemsComponent,
     ItemsCardComponent,
-    PokeDetailsComponent,
   ],
   imports: [
     BrowserModule,
