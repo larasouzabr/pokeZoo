@@ -1,0 +1,15 @@
+<div class ="d-flex justify-content-center flex-wrap mb-5 mt-5">
+    <label id ="welcome" >Items </label> 
+ </div>
+ <div class="d-flex justify-content-end mt-5">
+    <form class="d-flex p-2">
+    <input type="text" class="form-control mt-2 mb-1" placeholder="Nested-Ball" [(ngModel)]= "searchedBall" [ngModelOptions]="{standalone: true}"/>
+    </form>
+</div>
+
+ <div class ="d-flex justify-content-center flex-wrap mt-5" id="Items">
+     <app-items-card *ngFor ="let item of items | filter: searchedBall" [item] = "item" ></app-items-card>
+ </div>
+ <ngx-spinner 
+bdColor="rgba(24,27,29,255)"
+template="<img src='https://cdn.dribbble.com/users/621155/screenshots/2835314/simple_pokeball.gif'/>"></ngx-spinner>

@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BerriesComponent } from './berries/berries.component';
+import { PokeDetailsComponent } from './details/pokemon-details/poke-details/poke-details.component';
 import { RoutingGuard } from './guards/routing.guard';
 import { HomeComponent } from './home/home.component';
+import { ItemsComponent } from './items/items.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 const routes: Routes = [
@@ -19,11 +21,13 @@ const routes: Routes = [
       path:"berries",
       component: BerriesComponent,
     },
-    
+    {
+      path:"items",
+      component: ItemsComponent,
+    },
     ]  
-  }  
+  },
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

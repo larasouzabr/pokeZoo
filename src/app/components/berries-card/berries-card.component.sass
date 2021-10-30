@@ -1,0 +1,98 @@
+.overlay
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  height: 100%
+  width: 100%
+  opacity: 0
+  transition: .5s ease
+  z-index: 0
+  background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8PDw8PDw8VFRUPDw8PDxUPFQ8PDw8PFRUWFhUVFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0NFQ8PFS0dFR0tLS0tLS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLTctLf/AABEIALcBEwMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAAAQf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAEQH/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAQIF/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMYAdBgBVADFAAAAFRRRBQAAAAAABFAQUBFAEFRAABFBBFQAgAACAoKACgCgIooCKAAAAAAAaCgAgAAAAIoCAIAAACAIoIqKAAoAAKIooICgAAAAAAAAKACAAAACKACCggCAAAAlEUMAAUFRVAAAAABQAAFAQVAAUEAQDAAAAAAABAEAACgAAIACgAooAAAACgACoKAAAgoIAAAAAgAACAACAAAAAIqAAoAAKgooAAAACgqKAigCACggAAAABAQEVAAEAAABAEUABQABRFURQAAAAUFEBQQAFBAAAAAEAAAEAAQAAAoggCCiKoAKKgKCooAAAAACioAAAAAAAACACAqAgAAAAAAgDIKiqACgACiCigAAgKAAAoAIAAAigAgKgAAIAAACCCgIAgAKKCAoCgACoAKCKKIAoigAAAAICAAAAAAAiiAIAKggCKigCoKgooigAKAFAVAAAAAAAAAAAAAAAARUAQAAQACiCiKAKgAAKKIAAoAAAAAAAAKACCKAACgAggAACAAAAD//2Q==")
+.stats 
+  color: white
+  font-size: 20px
+  position: absolute
+  top: 50%
+  left: 50%
+  -webkit-transform: translate(-50%, -50%)
+  -ms-transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%)
+
+
+#title
+  font-size: 25px
+  color: #ffcb05
+  -webkit-text-stroke-width: 1px 
+  -webkit-text-stroke-color: #000 
+  font-family: 'Pokemon Solid', sans-serif
+ 
+
+#img
+  width: 80px
+  height: 80px
+
+#mainDiv
+  background-image: linear-gradient(rgba(13, 53, 255, 0.1) 0%, rgb(191, 197, 219) 98%), url("https://pm-site-assets-py4.s3.us-east-2.amazonaws.com/products/legacy/old_rose_pink_solid_sq.jpg")
+  transition: 0.5s
+  &:hover
+    transform: translateY(-30px)
+
+.berry-card
+  &:hover
+    .overlay
+      opacity: 1
+  &__img
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-VDlQhfpLeIf9glkfi9JfKvRBtW746b7h2BnfsmzGpRWalm_8QpXgPzXqV3yI6d-jQGI&usqp=CAU")
+    background-position-x: -22px
+    border-radius: 60px
+    width: 100px
+    margin-left: 70px
+
+  &__number,
+  &__name
+    padding: 0 10px
+
+  &__number
+    color: #fff
+    font-size: 100%
+    padding-top: 2px
+
+  &__name
+    color: #313131
+    font-size: 170%
+    margin: 0.5em 0 5px
+    text-transform: capitalize
+
+  &__flavors
+      text-transform: capitalize
+
+  &__firmness
+    margin-top: 10px
+    margin-bottom: 6px 
+    margin-left: 60px
+    border-radius: 4px
+    font-size: 21px
+    max-width: 200px
+    text-transform: capitalize
+    width: 50%
+    padding: 5px
+
+    &--soft 
+        color: #000  
+        background-color: #add8e6
+    &--very-soft
+        color: #000
+        background-color: #daedf4
+    &--hard
+        background-color: #FFA500
+        color: #fff
+        
+    &--very-hard
+        background-color: #FF5F1F
+        color: #fff
+
+    &--super-hard        
+        background-color: #FF4433
+        color: #fff

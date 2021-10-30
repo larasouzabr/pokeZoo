@@ -1,12 +1,24 @@
-<div class=" text-center mb-5">
-   <label id="text">Welcome to </label>
-    <div>
-        <label id="text-img">PokeZoo!</label>
+<div class="text-center mb-5 mt-5">
+    <label id="text">Welcome to </label>
+    <div class="mt-5">
+        <label id="text2">PokeZoo!</label>
     </div>
 </div>
-   
+    <div class="d-flex justify-content-end mt-5">
+        <div>
+            <form class="d-flex p-2">
+                <input type="text" class="form-control mb-5" placeholder="Pokemon's Name " [(ngModel)]="searchedKeyword"
+                    [ngModelOptions]="{ standalone: true }" />
+            </form>
+        </div>
+    </div>
 
-<div class ="d-flex justify-content-center flex-wrap" id="pokemons">
-    <app-poke-names *ngFor ="let pokemon of pokemons" [pokemon] = "pokemon" ></app-poke-names>
-</div>
+    <div class="d-flex justify-content-between m-4 flex-wrap" id="pokemons">
+        <app-poke-names *ngFor="let pokemon of pokemons | filter: searchedKeyword" 
+        [pokemon]="pokemon"></app-poke-names>
+    </div>
 
+    <ngx-spinner bdColor="rgba(24,27,29,255)"
+        template="<img src='https://cdn.dribbble.com/users/621155/screenshots/2835314/simple_pokeball.gif'/>">
+    </ngx-spinner>
+    <app-footer></app-footer>

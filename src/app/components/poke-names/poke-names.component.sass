@@ -1,30 +1,62 @@
+.overlay
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  height: 100%
+  width: 100%
+  opacity: 0
+  transition: .5s ease
+  z-index: 0
+  background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8PDw8PDw8VFRUPDw8PDxUPFQ8PDw8PFRUWFhUVFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0NFQ8PFS0dFR0tLS0tLS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLTctLf/AABEIALcBEwMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAAAQf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAEQH/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAQIF/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMYAdBgBVADFAAAAFRRRBQAAAAAABFAQUBFAEFRAABFBBFQAgAACAoKACgCgIooCKAAAAAAAaCgAgAAAAIoCAIAAACAIoIqKAAoAAKIooICgAAAAAAAAKACAAAACKACCggCAAAAlEUMAAUFRVAAAAABQAAFAQVAAUEAQDAAAAAAABAEAACgAAIACgAooAAAACgACoKAAAgoIAAAAAgAACAACAAAAAIqAAoAAKgooAAAACgqKAigCACggAAAABAQEVAAEAAABAEUABQABRFURQAAAAUFEBQQAFBAAAAAEAAAEAAQAAAoggCCiKoAKKgKCooAAAAACioAAAAAAAACACAqAgAAAAAAgDIKiqACgACiCigAAgKAAAoAIAAAigAgKgAAIAAACCCgIAgAKKCAoCgACoAKCKKIAoigAAAAICAAAAAAAiiAIAKggCKigCoKgooigAKAFAVAAAAAAAAAAAAAAAARUAQAAQACiCiKAKgAAKKIAAoAAAAAAAAKACCKAACgAggAACAAAAD//2Q==")
+.stats 
+  color: white
+  font-size: 20px
+  position: absolute
+  top: 50%
+  left: 50%
+  -webkit-transform: translate(-50%, -50%)
+  -ms-transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%)
 
-#title
-    font-size: 25px
-    color: #ffcb05
-    -webkit-text-stroke-width: 1px 
-    -webkit-text-stroke-color: #000 
-    font-family: 'Pokemon Solid', sans-serif
  
+#title
+  font-size: 25px
+  color: #ffcb05
+  -webkit-text-stroke-width: 1px
+  -webkit-text-stroke-color: #000
+  font-family: 'Pokemon Solid', sans-serif
 
+#mainDiv
+  background-image: linear-gradient(rgba(13, 53, 255, 0.1) 0%, rgb(191, 197, 219) 98%), url("https://www.publicdomainpictures.net/pictures/260000/nahled/metallic-silver-background-1524893710Zdd.jpg")
+  transition: 0.5s
+  &:hover
+    transform: translateY(-30px)
+    
 #img
   width: 200px
   height: 200px
-
+  cursor: pointer
+  border: 3px solid yellow
+  background-image: linear-gradient(rgba(1, 1, 2, 0.1) 0%, rgb(13, 14, 15) 100%), url("https://pbs.twimg.com/media/DVMT-6OXcAE2rZY.jpg")
+  
 .pokemon-card
-  &__image
-    background: #F2F2F2
-    width: 250px
-    margin: 0
+  &:hover
+    .overlay
+      opacity: 1
 
   &__number,
   &__name
     padding: 0 10px
 
   &__number
-    color: #919191
+    color: #484d50
     font-size: 80%
     padding-top: 2px
+    text-align: end
+    margin-right: 40px
+  
 
   &__name
     color: #313131
@@ -32,30 +64,31 @@
     margin: 0.5em 0 5px
     text-transform: capitalize
 
-  &__abilities
-    border-radius: 3px
-    border: 1px solid black
-    font-size: 16px
-    line-height: 30px 
-    max-width: 100px
-    text-transform: capitalize
-    width:40%
-    display: inline-flex
-    margin: 3px
-    padding: 2px
 
+  &__abilities
+    &:nth-of-type(even)
+      margin-left: .5rem!important
+    border-radius: 20px
+    font-size: 16px
+    text-transform: capitalize
+    border: 1px solid black
+    
 
   &__types
     display: flex
-
+   
+    
   &__type
-    margin-top: 20px 
+    margin-top: 20px
     border-radius: 3px
     font-size: 16px
     margin: 0 10px
     max-width: 200px
     text-transform: capitalize
     width: 50%
+    &:only-child
+      margin-left: 60px
+   
 
     &--grass
       background: #9bcc50
@@ -225,4 +258,4 @@
       background: -o-linear-gradient(180deg, #4592c4 50%, #4592c4 50%)
       background: linear-gradient(180deg, #4592c4 50%, #4592c4 50%)
       background-color: #4592c4
-      color: #fff           
+      color: #fff

@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row m-3">
+        <div class="d-flex flex-wrap justify-content-center mt-4">
+            <div class="card text-justify shadow p-2 mb-5 bg-white rounded border-radius-4" style="width: 18rem;">
+                <div class="item-card text-center">
+                    <div class="item-card__number">
+                        {{ 'Nº ' + item?.id}}
+                    </div>
+                    <div class="item-card__img m-5">
+                        <img [src]="getImgItem()" alt="{{item}} Image" id="img">
+                    </div>
+                    <div class="item-card__name mb-5 mt-3" id="title">
+                        {{item?.name}}
+                    </div>
+                    <div class="item-card__category"
+                        [class]="'item-card__category--' + item?.category?.name.toLowerCase()">
+                        {{item?.category?.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

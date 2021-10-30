@@ -1,7 +1,5 @@
 
-import { Component, Input, OnInit } from '@angular/core';
-import { Pokemon } from 'src/app/dtos';
-
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-poke-names',
@@ -10,17 +8,15 @@ import { Pokemon } from 'src/app/dtos';
 })
 export class PokeNamesComponent implements OnInit {
   @Input()
-  public pokemon: any | null = null; 
-  
+  public pokemon: any | null = null;
+
   constructor(
   ) { }
-  
 
   ngOnInit(): void {
-    console.log(this.pokemon)
   }
-
+  
   pegarImagemPokemon() {
-  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.pokemon.id}.png`;
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${this.pokemon.id}.png`;
   }
 }

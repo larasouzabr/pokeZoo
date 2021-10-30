@@ -1,16 +1,10 @@
 
-
 <nav class="navbar navbar-light" style = "background-color: #E34234">
-    <div id ="elementsNavBar" class="d-flex nav justify-content-between justify-content-start">
+    <div id ="elementsNavBar" class="d-flex nav justify-content-between justify-content-start m-2">
       <a class="navbar-brand" routerLink="/home" >Home</a>
       <a class="navbar-brand" routerLink="/berries"> Berries</a>
-     </div>
-      <div class ="d-flex nav justify-content-end">
-        <form class="d-flex p-2">
-          <input class="form-control me-2 p-2 mr-2 mt-2" type="search" placeholder="Search" aria-label="Search" >
-        <button class="btn btn-outline-success mt-2 mb-1" type="submit" id="searchButton" >Search</button>
-        </form>
+      <a class="navbar-brand" routerLink="/items"> Items</a>
      </div>
   </nav>
   
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>

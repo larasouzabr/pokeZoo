@@ -1,38 +1,88 @@
-
-
 <div class="container-fluid">
-  <div class="row m-3">      
+  <div class="row">
     <div class="d-flex flex-wrap justify-content-center">
-      <div class="card text-justify  shadow p-4 mb-5 bg-white rounded" style="width: 18rem;">
+      <div
+        class="text-justify shadow p-4 mb-5 rounded"
+        style="width: 20rem"
+        id="mainDiv"
+      >
         <div class="pokemon-card text-center">
           <div class="pokemon-card__number">
-            {{ 'Nº ' + pokemon?.id}} 
+            {{ "Nº " + pokemon?.id }}
           </div>
           <div class="pokemon-card__image">
-               <img
+            <img
               [src]="pegarImagemPokemon()"
-              alt="Pokemon Image" id="img"> 
-          </div>   
-          <div class="pokemon-card__name">
-            {{pokemon?.name}} 
+              alt="Pokemon Image"
+              id="img"
+              routerLink="['poke-details', pokemon?.status?.id]"
+            />
           </div>
-          <div>
-            <p> <label id="title">Abilities</label></p>
-            <div class="pokemon-card__abilities d-flex-row"*ngFor="let ability of pokemon?.abilities" >
-              {{ ability?.ability?.name }}
-            </div>
+          <div class="pokemon-card__name" id="title">
+            {{ pokemon?.name }}
           </div>
-          <p> <label id="title">Type </label></p>
-          <div class="pokemon-card__types">
-            <div class="pokemon-card__type"
-                 *ngFor="let type of pokemon?.types"
-                 [class]="'pokemon-card__type--' + type?.type?.name.toLowerCase()">
+          <div class="pokemon-card__types m-4">
+            <div
+              class="pokemon-card__type"
+              *ngFor="let type of pokemon?.types"
+              [class]="'pokemon-card__type--' + type?.type?.name.toLowerCase()"
+            >
               {{ type?.type?.name }}
             </div>
           </div>
+          <div>
+            <div
+              class="
+                pokemon-card__ability
+                mt-3
+                d-flex
+                flex-wrap
+                justify-content-center
+                align-items-center
+                w-100
+              "
+            >
+              <div
+                class="pokemon-card__abilities w-45 mb-2"
+                *ngFor="let ability of pokemon?.abilities"
+              >
+                {{ ability?.ability?.name }}
+              </div>
+            </div>
+          </div>
+          <div class="overlay">
+            <div class="stats">
+              <label class="stats__1"> Stats </label>
+              <div class="stats__height mt-3">
+                <label> Height: {{ pokemon?.height }}</label>
+              </div>
+              <div class="stats__weight mt-2">
+                <label> Weight: {{ pokemon?.weight }}</label>
+              </div>
+              <div class="stats__base mt-3">
+                <div>
+                  <label> HP: {{ pokemon?.stats[5]?.base_stat }}</label>
+                </div>
+                <div>
+                  <label> Attack: {{ pokemon?.stats[4]?.base_stat }}</label>
+                </div>
+                <div>
+                  <label> Defense: {{ pokemon?.stats[3]?.base_stat }}</label>
+                </div>
+                <div>
+                  <label> Sp Attack: {{ pokemon?.stats[2]?.base_stat }}</label>
+                </div>
+                <div>
+                  <label> Sp Defense: {{ pokemon?.stats[1]?.base_stat }}</label>
+                </div>
+                <div>
+                  <label> Speed: {{ pokemon?.stats[0]?.base_stat }}</label>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>    
-    </div> 
+      </div>
+    </div>
   </div>
 </div>
-

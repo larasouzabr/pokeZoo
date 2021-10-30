@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row m-3">
+    <div class="d-flex flex-wrap justify-content-center mt-2">
+      <div
+        class="card text-justify shadow p-4 mb-5 bg-white rounded"
+        style="width: 18rem"
+        id="mainDiv"
+      >
+        <div class="berry-card text-center">
+          <div class="berry-card__number">
+            {{ "Nº " + berry?.id }}
+          </div>
+          <div class="berry-card__img">
+            <img [src]="getImgBerrie()" alt="Berry Image" id="img" />
+          </div>
+          <div class="berry-card__name mb-2">
+            {{ berry?.name }}
+          </div>
+          <div
+            class="berry-card__firmness"
+            [class]="
+              'berry-card__firmness--' + berry?.firmness?.name.toLowerCase()">
+            {{ berry?.firmness?.name }}
+          </div>
+        </div>
+        <div class="overlay">
+          <div class="stats">
+            <p><label class="mt-2">Growth Time </label></p>
+            <div class="berry-card__growth-time">
+              {{ berry?.growth_time + "Hours" }}
+            </div>
+            <div class="stats__weight mt-2">
+              <label></label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

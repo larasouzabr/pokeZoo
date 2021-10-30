@@ -6,16 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class getPokemonsService {
-
   constructor(
     private http: HttpClient,
   ) {}
   
   getPokemonName2():Observable<any>{
-    return this.http.get<any>("https://pokeapi.co/api/v2/pokemon");
+    return this.http.get<any>("https://pokeapi.co/api/v2/pokemon?limit=100");
   }
 
   getPokemonDetails(name:string):Observable<any>{
     return this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/${name}`);
   }
+
 }
