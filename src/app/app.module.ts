@@ -20,7 +20,6 @@ import { ItemsComponent } from './items/items.component';
 import { ItemsCardComponent } from './components/items-card/items-card.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { FooterComponent } from './footer/footer.component';
 import { PokeDetailsComponent } from './details/pokemon-details/poke-details/poke-details.component';
 
 @NgModule({
@@ -33,7 +32,6 @@ import { PokeDetailsComponent } from './details/pokemon-details/poke-details/pok
     BerriesCardComponent,
     ItemsComponent,
     ItemsCardComponent,
-    FooterComponent,
     PokeDetailsComponent,
   ],
   imports: [
