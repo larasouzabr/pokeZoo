@@ -9,7 +9,6 @@ import { NgxSpinnerService } from "ngx-spinner";
 export class HomeComponent implements OnInit {
     searchedKeyword : any;
 
-
     public pokemons = []; 
     constructor(
       public pokemonService:getPokemonsService,
@@ -21,21 +20,9 @@ export class HomeComponent implements OnInit {
   }
   getPokemons(){
     this.spinner.show();
-    this.pokemonService.getPokemonName2().subscribe(async resp => {
-      resp.results = await resp.results.map(async (pokemon:any) => {
-        let pokeDetails = await this.pokemonService.getPokemonDetails(pokemon.name).toPromise();
-        return ({
-          ...pokemon,
-          ...pokeDetails
-        });
-      });
-      Promise.all(resp.results).then((results:any) => {
-        this.pokemons = results;
-        setTimeout(() => {
-          this.spinner.hide();
-        }, 2000);
-      });
-    });  
+    this.pokemonService.getPokemonName2().subscribe(resp => {
+      this.pokemons = resp.results;
+    }).add(() => this.spinner.hide());
   }
   
 }

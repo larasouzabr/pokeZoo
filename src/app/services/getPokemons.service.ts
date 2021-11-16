@@ -11,7 +11,7 @@ export class getPokemonsService {
   ) {}
   
   getPokemonName2():Observable<any>{
-    return this.http.get<any>("https://pokeapi.co/api/v2/pokemon?limit=100");
+    return this.http.get<any>("https://pokeapi.co/api/v2/pokemon?limit=151");
   }
 
   getPokemonDetails(name:string):Observable<any>{
